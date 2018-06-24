@@ -6,76 +6,90 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class ForwardingSet<E> implements Set<E> {
-	private final Set<E> s;
 
-	public ForwardingSet(Set<E> s) {
-		this.s = s;
-	}
+    private final Set<E> s;
 
-	public void clear() {
-		s.clear();
-	}
+    public ForwardingSet(final Set<E> s) {
+        this.s = s;
+    }
 
-	public boolean contains(Object o) {
-		return s.contains(o);
-	}
+    @Override
+    public void clear() {
+        s.clear();
+    }
 
-	public boolean isEmpty() {
-		return s.isEmpty();
-	}
+    @Override
+    public boolean contains(final Object o) {
+        return s.contains(o);
+    }
 
-	public int size() {
-		return s.size();
-	}
+    @Override
+    public boolean isEmpty() {
+        return s.isEmpty();
+    }
 
-	public Iterator<E> iterator() {
-		return s.iterator();
-	}
+    @Override
+    public int size() {
+        return s.size();
+    }
 
-	public boolean add(E e) {
-		return s.add(e);
-	}
+    @Override
+    public Iterator<E> iterator() {
+        return s.iterator();
+    }
 
-	public boolean remove(Object o) {
-		return s.remove(o);
-	}
+    @Override
+    public boolean add(final E e) {
+        return s.add(e);
+    }
 
-	public boolean containsAll(Collection<?> c) {
-		return s.containsAll(c);
-	}
+    @Override
+    public boolean remove(final Object o) {
+        return s.remove(o);
+    }
 
-	public boolean addAll(Collection<? extends E> c) {
-		return s.addAll(c);
-	}
+    @Override
+    public boolean containsAll(final Collection<?> c) {
+        return s.containsAll(c);
+    }
 
-	public boolean removeAll(Collection<?> c) {
-		return s.removeAll(c);
-	}
+    @Override
+    public boolean addAll(final Collection<? extends E> c) {
+        return s.addAll(c);
+    }
 
-	public boolean retainAll(Collection<?> c) {
-		return s.retainAll(c);
-	}
+    @Override
+    public boolean removeAll(final Collection<?> c) {
+        return s.removeAll(c);
+    }
 
-	public Object[] toArray() {
-		return s.toArray();
-	}
+    @Override
+    public boolean retainAll(final Collection<?> c) {
+        return s.retainAll(c);
+    }
 
-	public <T> T[] toArray(T[] a) {
-		return s.toArray(a);
-	}
+    @Override
+    public Object[] toArray() {
+        return s.toArray();
+    }
 
-	@Override
-	public boolean equals(Object o) {
-		return s.equals(o);
-	}
+    @Override
+    public <T> T[] toArray(final T[] a) {
+        return s.toArray(a);
+    }
 
-	@Override
-	public int hashCode() {
-		return s.hashCode();
-	}
+    @Override
+    public boolean equals(final Object o) {
+        return s.equals(o);
+    }
 
-	@Override
-	public String toString() {
-		return s.toString();
-	}
+    @Override
+    public int hashCode() {
+        return s.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return s.toString();
+    }
 }
